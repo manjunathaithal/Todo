@@ -7,7 +7,7 @@ function App() {
   const [value, setValue] = useState([]);
   return (
     <div className="App">
-      <header>Todo-List Items</header>
+      <header>Todo-List</header>
 
       <Form
         setInputText={setInputText}
