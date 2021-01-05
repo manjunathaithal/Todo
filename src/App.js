@@ -25,8 +25,13 @@ function App() {
     localStorage.setItem("Todos", JSON.stringify([...value]));
   };
   const getLocalDb = () => {
-    let localValue = JSON.parse(localStorage.getItem("Todos"));
-    setValue([...localValue]);
+    if (localStorage.getItem("Todos") !== null) {
+      let localValue = JSON.parse(localStorage.getItem("Todos"));
+      setValue([...localValue]);
+    } else {
+      setValue([]);
+      localStorage.setItem("Todos", JSON.stringify([]));
+    }
   };
   useEffect(() => {
     getLocalDb();
