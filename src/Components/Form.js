@@ -4,7 +4,9 @@ const form = (props) => {
   const onTextHandler = (e) => {
     props.setInputText(e.target.value);
   };
-
+  const dropDownHandler = (e) => {
+    props.setStatus(e.target.value);
+  };
   const submitHandler = (e) => {
     e.preventDefault();
     props.setValue([
@@ -30,7 +32,11 @@ const form = (props) => {
           <i className="fas fa-plus-square"></i>
         </button>
         <div className="select">
-          <select name="todos" className="filter-todo">
+          <select
+            onChange={dropDownHandler}
+            name="todos"
+            className="filter-todo"
+          >
             <option value="all">All</option>
             <option value="completed">Completed</option>
             <option value="uncompleted">Uncompleted</option>
